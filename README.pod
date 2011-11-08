@@ -1,3 +1,5 @@
+=encoding utf-8
+
 =head1 Saint-Petersburg perl-mongers
 
 Да, это - СЕКТАААААА!!!!111
