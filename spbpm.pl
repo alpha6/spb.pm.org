@@ -72,7 +72,36 @@ post '/login' => sub {
 get '/register' => sub {
     my $self = shift;
 
-    $self->render(text => "<h3>А не работает еще :(</h3>", layout => 'index');
+    $self->stash(message => 'Login and password are mandatory');
+    $self->render(template => 'register');
+};
+
+post '/register' => sub {
+    my $self = shift;
+
+    my $login  = $self->req->param('login');
+    my $passwd = $self->req->param('passwd');
+    my $email  = $self->req->param('email');
+    if (!($login && $passwd)) {
+        $self->stash(message => 'Please provide login and password');
+        $self->render(template => 'register');
+    }
+    else {
+        my $user = $users->find_one({ login => $login });
+        if ($user) {
+            $self->stash(message => 'This login is no longer available');
+            $self->render(template => 'register');
+        }
+        else {
+            $users->insert({
+                login    => $login,
+                passwd   => sha1_hex($passwd),
+                email    => $email,
+                reg_date => time,
+            });
+            $self->render(template => 'login');
+        }
+    }
 };
 
 get '/add/news' => sub {
