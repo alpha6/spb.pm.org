@@ -95,4 +95,5 @@ get '/users' => sub {
     $self->render( text => "<pre>".Dumper(@all)."</pre>");
 };
 
+app->secret('Perl mongers of Saint-Petersburg');
 app->start;
