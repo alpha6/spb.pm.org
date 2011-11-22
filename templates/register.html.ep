@@ -1,0 +1,17 @@
+% layout 'default', title => 'Saint-Petersburg PM Group : Registration';
+<h2>Регистрация</h2>
+<h3><font color="red"><%= $message %></font></h3>
+<h5><font color="blue">
+%= flash 'warning'
+</font></h5>
+<form action="/register" method=post>
+  <dl>
+    <dt>Логин:
+    <dd><input type=text name=login>
+    <dt>Пароль:
+    <dd><input type=password name=passwd>
+    <dt>E-mail:
+    <dd><input type=text name=email>
+    <dd><input type=submit value=Register>
+  </dl>
+</form>
