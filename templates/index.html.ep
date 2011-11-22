@@ -6,6 +6,7 @@
 	<tr valign="top"><td class="content-left-front">
 		<div class="main-view">
 			<div class="message"><h2><a href="/login">Войти</a></h2></div>
+			<div class="message"><h4><a href="/register">Зарегистрироваться</a></h4></div>
 			<div class="message">
 			<h2>Открыта группа Санкт-Петербург.pm!</h2>
 			<div>Ура! Идея, которая возникла после фейерической конференции 
