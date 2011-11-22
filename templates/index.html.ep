@@ -1,4 +1,4 @@
-% layout 'default';
+% layout 'default', title => 'Saint-Petersburg PM Group';
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td class="content">
 	<h1>SPb.pm</h1>
