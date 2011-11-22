@@ -6,9 +6,6 @@ use Digest::SHA1  qw(sha1_hex);
 use UUID::Tiny;
 
 use MongoDB;
-use MongoDB::OID;
-
-use Data::Dumper;
 
 my $db = MongoDB::Connection->new->spbpm;
 
@@ -61,7 +58,7 @@ post '/login' => sub {
     if ($user->{'login'}) {
         my $sid = create_UUID_as_string(UUID_V4);
         my $agent = $self->req->headers->user_agent || 'Empty';
-        $session->insert({ sid => $sid, sign => $agent, user => $user->{'login'}, last_act => time});
+        $session->insert({ sid => $sid, sign => $agent, user => $user->{'login'}, last_act => time });
         $self->session(sid => $sid);
         $self->redirect_to('/');
     } else {
@@ -118,7 +115,8 @@ get '/users' => sub {
     my $self = shift;
 
     my @all = $users->find->sort({reg_date => 1})->all;
-    $self->render(text => "<pre>".Dumper(@all)."</pre>");
+    my $users = join "\n", map {$_->{'login'}} @all;
+    $self->render(text => "<pre>$users</pre>");
 };
 
 app->secret('Perl mongers of Saint-Petersburg');
