@@ -10,13 +10,13 @@ use MongoDB::OID;
 
 use Data::Dumper;
 
-my $conn = MongoDB::Connection->new;
-my $db = $conn->spbpm; #Создаем базу данных или подключаемся к существющей
-my $users = $db->users; #Аналогично с коллекцией
-my $session = $db->sessions; #Таблица с сессиями
-my $news = $db->news;
+my $db = MongoDB::Connection->new->spbpm;
 
-my $session_life = 60*60*24; #Сессия живет сутки
+my $users   = $db->users;
+my $session = $db->sessions;
+my $news    = $db->news;
+
+my $session_life = 60*60*24;
 
 under sub {
     my $self = shift;
@@ -34,8 +34,6 @@ under sub {
         }
     }
     else {
-        #my $pref = int(rand(10));
-        #$users->insert({ login => 'alpha6', passwd => sha1_hex('test'), reg_date => time, email => 'alpha6@test.ru'});
         $self->stash( user_data => { is_auth => 0 } );
     }
 
@@ -80,7 +78,6 @@ get '/register' => sub {
 
 get '/add/news' => sub {
     my $self = shift;
-    #Ну тут проверка авторизаций и прочаяя ботва
 
     $self->render( template => 'add_news' );
 };
