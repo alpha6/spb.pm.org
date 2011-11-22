@@ -54,23 +54,34 @@ post '/login' => sub {
 
     my $login  = $self->req->param('login');
     my $passwd = $self->req->param('passwd');
-    my $user = $users->find_one({ login => $login, passwd => sha1_hex($passwd) });
+    my $user = $users->find_one({
+        login  => $login,
+        passwd => sha1_hex($passwd)
+    });
     if ($user->{'login'}) {
         my $sid = create_UUID_as_string(UUID_V4);
         my $agent = $self->req->headers->user_agent || 'Empty';
-        $session->insert({ sid => $sid, sign => $agent, user => $user->{'login'}, last_act => time });
+        $session->insert({
+            sid      => $sid,
+            sign     => $agent,
+            user     => $user->{'login'},
+            last_act => time
+        });
         $self->session(sid => $sid);
         $self->redirect_to('/');
     } else {
-        $self->render(login_error => '<h4 class=error>Не правильный пароль</h4>', template => 'login');
+        $self->flash(login_error => 'Не верный пароль');
+        $self->redirect_to('/login');
     }
 };
 
 get '/register' => sub {
     my $self = shift;
 
-    $self->stash(message => 'Login and password are mandatory');
-    $self->render(template => 'register');
+    $self->render(
+        message  => 'Поля "логин" и "пароль" обязательны',
+        template => 'register'
+    );
 };
 
 post '/register' => sub {
@@ -79,25 +90,25 @@ post '/register' => sub {
     my $login  = $self->req->param('login');
     my $passwd = $self->req->param('passwd');
     my $email  = $self->req->param('email');
-    if (!($login && $passwd)) {
-        $self->stash(message => 'Please provide login and password');
-        $self->render(template => 'register');
+ 
+    unless ($login && $passwd) {
+        $self->flash(warning => 'Пожалуйста, введите логин и пароль');
+
+        return $self->redirect_to('/register');
+    }
+    my $user = $users->find_one({ login => $login });
+    if ($user) {
+	$self->flash(warning => 'Данный логин уже занят'); 
+        $self->redirect_to('/register');
     }
     else {
-        my $user = $users->find_one({ login => $login });
-        if ($user) {
-            $self->stash(message => 'This login is no longer available');
-            $self->render(template => 'register');
-        }
-        else {
-            $users->insert({
-                login    => $login,
-                passwd   => sha1_hex($passwd),
-                email    => $email,
-                reg_date => time,
-            });
-            $self->render(template => 'login');
-        }
+        $users->insert({
+            login    => $login,
+            passwd   => sha1_hex($passwd),
+            email    => $email,
+            reg_date => time,
+        });
+        $self->redirect_to('/login');
     }
 };
 

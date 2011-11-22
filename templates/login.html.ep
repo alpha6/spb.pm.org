@@ -1,11 +1,14 @@
 % layout 'default', title => 'Saint-Petersburg PM Group : Login';
-<h2>Login</h2>
+<h2>Вход</h2>
+<h5><font color="blue">
+%= flash 'login_error'
+</font></h5>
 <form action="/login" method=post>
   <dl>
-    <dt>Username:
+    <dt>Логин:
     <dd><input type=text name=login>
-    <dt>Password:
+    <dt>Пароль:
     <dd><input type=password name=passwd>
-    <dd><input type=submit value=login>
+    <dd><input type=submit value=Login>
   </dl>
 </form>
