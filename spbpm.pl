@@ -83,6 +83,8 @@ post '/login' => sub {
     }
 };
 
+get '/logout' => sub { $_[0]->session(expires => 1); $_[0]->redirect_to('/'); };
+
 get '/register' => sub {
     my $self = shift;
 
