@@ -144,6 +144,6 @@ get '/users' => sub {
     $self->render(text => "<pre>$users</pre>");
 };
 
-app->secret('Perl mongers of Saint-Petersburg');
+app->secret($config->{secret});
 app->start;
 
