@@ -46,6 +46,8 @@ get '/' => sub {
 get '/login' => sub {
     my $self = shift;
     
+    $self->redirect_to('/') if $self->stash->{user_data}->{is_auth};
+    
     $self->render(template => 'login');
 };
 
