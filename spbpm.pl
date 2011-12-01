@@ -7,6 +7,14 @@ use UUID::Tiny;
 
 use MongoDB;
 
+my $config = plugin 'Config';
+
+plugin recaptcha => {
+   public_key  => $config->{recaptcha}{public_key},
+   private_key => $config->{recaptcha}{private_key},
+   lang        => 'ru'
+};
+
 my $db = MongoDB::Connection->new->spbpm;
 
 my $users   = $db->users;
@@ -77,6 +85,8 @@ post '/login' => sub {
     }
 };
 
+get '/logout' => sub { $_[0]->session(expires => 1); $_[0]->redirect_to('/'); };
+
 get '/register' => sub {
     my $self = shift;
 
@@ -89,6 +99,12 @@ get '/register' => sub {
 post '/register' => sub {
     my $self = shift;
 
+    $self->recaptcha;
+    if ($self->stash('recaptcha_error')) {
+        $self->flash(warning => 'Неверно введён текст капчи');
+
+        return $self->redirect_to('/register');
+    }
     my $login  = $self->req->param('login');
     my $passwd = $self->req->param('passwd');
     my $email  = $self->req->param('email');
@@ -132,6 +148,6 @@ get '/users' => sub {
     $self->render(text => "<pre>$users</pre>");
 };
 
-app->secret('Perl mongers of Saint-Petersburg');
+app->secret($config->{secret});
 app->start;
 

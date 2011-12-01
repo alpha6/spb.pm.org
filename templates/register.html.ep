@@ -12,6 +12,7 @@
     <dd><input type=password name=passwd>
     <dt>E-mail:
     <dd><input type=text name=email>
-    <dd><input type=submit value=Register>
+    <%= recaptcha_html %>
+    <dd><input type=submit name=submit value="Зарегистрироваться">
   </dl>
 </form>
