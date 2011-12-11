@@ -1,8 +1,18 @@
-% layout 'default', title => 'Saint-Petersburg PM Group : Login';
+% layout 'pretty', title => 'Saint-Petersburg PM Group : Login';
+
+<ul class="tabs">
+    <li><a href="/">SPb.pm</a></li>
+    <li><a href="/">News</a></li>
+    <li class="active"><a href="/login">Login</a></li>
+</ul>
+
+<div class="container">
+
 <h2>Вход</h2>
 <h5><font color="blue">
 %= flash 'login_error'
 </font></h5>
+
 <form action="/login" method=post>
   <dl>
     <dt>Логин:
@@ -12,3 +22,6 @@
     <dd><input type=submit value=Login>
   </dl>
 </form>
+
+
+</div>
