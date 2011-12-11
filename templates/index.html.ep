@@ -1,39 +1,36 @@
-% layout 'default', title => 'Saint-Petersburg PM Group';
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr valign="top"><td class="content">
-	<h1>SPb.pm</h1>
-	<table border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr valign="top"><td class="content-left-front">
-		<div class="main-view">
-% if ($user_data->{is_auth} == 0) { 
-			<div class="message"><h2><a href="/login">Войти</a></h2></div>
-			<div class="message"><h4><a href="/register">Зарегистрироваться</a></h4></div>
-% }
-% else {
- 			<div class="message"><h4><a href="/logout">Выйти</a></h4></div>
-% }
-			<div class="message">
-			<h2>Открыта группа Санкт-Петербург.pm!</h2>
-			<div>Ура! Идея, которая возникла после фейерической конференции 
-				<a href="http://event.perlrussia.ru/yr2008/">YAPC::Russia «May Perl» 2008</a>, получила свое воплощение.
-				<strong>SPb Perl Mongers</strong> - это группа, объединяющая Perl-разработчиков, любителей Perl,
-				и просто всех, для кого слово <em>Perl</em> означает нечто б<strong>о</strong>льшее, чем просто слово.
-				Основной формой общения Perl-разработчиков в группе является список рассылки SPb.pm.
-				Всем Perl Monger'ам Санкт-Петербурга настоятельно рекомендуется <a href="http://mail.pm.org/mailman/listinfo/spb-pm">подписаться</a> :)
-			</div>
-			</div>
-		</div>
-	</td>
+% layout 'pretty', title => 'Saint-Petersburg PM Group';
 
-	<td class="content-right-front">
-	<div>
-		<div class="perlpromo">
+<ul class="tabs">
+	<li><a href="/">SPb.pm</a></li>
+	<li class="active"><a href="/">News</a></li>
+	<li><a href="/login">Login</a></li>
+	
+</ul>
+
+<div class="container">
+
+<h1>SPb.pm - Новости</h1>		
+<div class="row">
+	
+    <div class="span12">
+		<h2>Открыта группа Санкт-Петербург.pm!</h2>
+		Идея, которая возникла после фейерической конференции 
+		<a href="http://event.perlrussia.ru/yr2008/">YAPC::Russia «May Perl» 2008</a>, получила свое воплощение.
+		<strong>SPb Perl Mongers</strong> - это группа, объединяющая Perl-разработчиков, любителей Perl,
+		и просто всех, для кого слово <em>Perl</em> означает нечто б<strong>о</strong>льшее, чем просто слово.
+		Основной формой общения Perl-разработчиков в группе является список рассылки SPb.pm.
+		Всем Perl Monger'ам Санкт-Петербурга настоятельно рекомендуется <a href="http://mail.pm.org/mailman/listinfo/spb-pm">подписаться</a> :)
+    </div>
+    
+	<div class="span4">
+		
 		<script type="text/javascript" src="http://adserver.szabgab.com/ads/direct_link_selflink.js?cnt=5&amp;noself=1"></script><div class="clear"></div>
-		</div>
+		
 		<p><a href="http://mail.pm.org/mailman/listinfo/spb-pm"><img src="img/groups20.gif" width="20" height="20" alt=""></a> <a href="http://mail.pm.org/mailman/listinfo/spb-pm">Список рассылки SPb.pm</a></p>
 		<p><a href="http://www.pm.org/"><img src="img/onion.gif" width="20" height="20" alt=""></a> <a href="http://www.pm.org/">Perl Mongers</a></p>
 		<p><a href="http://www.google.com/calendar/embed?src=ngctmrd1cac35061mrjt3hpgng%40group.calendar.google.com"><img src="img/calendar.gif" width="20" height="20" alt=""></a> <a href="http://www.google.com/calendar/embed?src=ngctmrd1cac35061mrjt3hpgng%40group.calendar.google.com">Календарь Perl-событий</a></p>
 		<p><br><a href="http://www.oreilly.com/"><img alt="" src="img/ug_ad_25.gif" width="250" height="60"></a></p>
+		<a href="http://yapc.tv/"><img src="/img/yapctv.gif" wisth="250" height="71" alt="YAPC::TV"></a>
 		<br>
 
 		<ul>
@@ -48,18 +45,16 @@
 		<li><a href="http://rostovondon.pm.org/">Ростов-на-Дону.PM</a></li>
 		<li><a href="http://spb.pm.org/">Санкт-Петербург.PM</a></li>
 		</ul>
-	</div>
-	</td></tr>
-	</table>
-	</td></tr>
+    </div>
+
+</div>
 	
-	<tr valign="bottom"><td class="bottom"><div class="info">
-		<div class="right">2011</div>
-	<div class="left">SPb.pm</div>
-	</div>
-</td></tr>
-</table>
-<!-- Yandex.Metrika counter -->
+</div>
+
+
+	
+	
+	<!-- Yandex.Metrika counter -->
 <div style="display:none;"><script type="text/javascript">
 (function(w, c) {
     (w[c] = w[c] || []).push(function() {
