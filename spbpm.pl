@@ -53,7 +53,7 @@ get '/' => sub {
 
 get '/login' => sub {
     my $self = shift;
-    
+
     $self->render(template => 'login');
 };
 
@@ -85,14 +85,14 @@ post '/login' => sub {
 
 get '/logout' => sub { $_[0]->session(expires => 1); $_[0]->redirect_to('/'); };
 
-get '/register' => sub {
-    my $self = shift;
-
-    $self->render(
-        message  => 'Поля "логин" и "пароль" обязательны',
-        template => 'register'
-    );
-};
+# get '/register' => sub {
+#     my $self = shift;
+#
+#     $self->render(
+#         message  => 'Поля "логин" и "пароль" обязательны',
+#         template => 'register'
+#     );
+# };
 
 post '/register' => sub {
     my $self = shift;
@@ -106,7 +106,7 @@ post '/register' => sub {
     my $login  = $self->req->param('login');
     my $passwd = $self->req->param('passwd');
     my $email  = $self->req->param('email');
- 
+
     unless ($login && $passwd) {
         $self->flash(warning => 'Пожалуйста, введите логин и пароль');
 
@@ -114,7 +114,7 @@ post '/register' => sub {
     }
     my $user = $users->find_one({ login => $login });
     if ($user) {
-	$self->flash(warning => 'Данный логин уже занят'); 
+	$self->flash(warning => 'Данный логин уже занят');
         $self->redirect_to('/register');
     }
     else {
