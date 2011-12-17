@@ -3,3 +3,7 @@
 =head1 Saint-Petersburg perl-mongers
 
 Да, это - СЕКТАААААА!!!!111
+
+=head1 Идеи для проекта
+
+Поучаствовать в живой дискуссии о данном проекте можно здесь: L<http://sync.in/qBXpMU7Z8R>
