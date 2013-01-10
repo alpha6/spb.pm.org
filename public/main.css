@@ -217,6 +217,9 @@ div.wrong
 	text-decoration: line-through;
 }
 
+div.tags {
+	margin-bottom: 0.5em;
+}
 div.recent-cpan
 {
 }
@@ -232,7 +235,7 @@ div.recent-cpan p span.author
 }
 div.main-view
 {
-	font-family: Times New Roman, serif;
+	font-family: Arial, sans-serif;
 	padding-right: 3em;
 }
 div.main-view div.message
