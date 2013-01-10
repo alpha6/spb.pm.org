@@ -1,0 +1,25 @@
+appname: "Twist"
+
+layout: "main"
+
+charset: "UTF-8"
+
+template: "caml"
+
+twist:
+    author: "SPb.pm"
+    about: "Saint-Petersburg Perl mongers"
+    title: "SPb.pm"
+    description: "Saint-Petersburg Perl mongers site"
+    menu:
+        - title: "Index"
+          link: "/"
+        - title: "Tags"
+          link: "/tags.html"
+        - title: "Archive"
+          link: "/archive.html"
+    page_limit: 10
+#    urchin: 'UA-123456-1'
+#    disqus:
+#        shortname: 'my-disqus-shortname'
+#        developer: 0

@@ -1,0 +1,15 @@
+{{#article}}
+    <div class="text">
+        <h1 class="title">
+            <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
+        </h1>
+        {{>article-meta}}
+        <div class="article-content">
+            {{#preview}}
+                {{&preview}}
+            {{/preview}}
+
+            {{&content}}
+        </div>
+    </div>
+{{/article}}

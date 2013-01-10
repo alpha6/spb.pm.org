@@ -1,0 +1,81 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{{#title}}{{title}}{{/title}}{{^title}}{{settings.twist.title}}{{/title}}</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="{{settings.twist.title}}" href="/index.rss" />
+</head>
+
+<body>
+<iframe frameborder="0" style="height: 60px; width: 100%" src="http://love.perl.lv/"></iframe>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top"><td class="content">
+  
+  	<nav>
+  	{{#settings.twist.menu}}
+        <a href="{{link}}">{{title}}</a>
+    {{/settings.twist.menu}}
+    </nav>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr valign="top"><td class="content-left-front">
+		<div class="main-view">
+            <div class="message">
+
+                {{&content}}
+
+			</div>
+		</div>
+	</td>
+
+	<td class="content-right-front">
+	<div>
+		<div class="perlpromo">
+		<script type="text/javascript" src="http://adserver.szabgab.com/ads/direct_link_selflink.js?cnt=5&amp;noself=1"></script><div class="clear"></div>
+		</div>
+		<p><a href="http://mail.pm.org/mailman/listinfo/spb-pm"><img src="/img/groups20.gif" width="20" height="20" alt=""></a> <a href="http://mail.pm.org/mailman/listinfo/spb-pm">Список рассылки SPb.pm</a></p>
+		<p><a href="http://www.pm.org/"><img src="/img/onion.gif" width="20" height="20" alt=""></a> <a href="http://www.pm.org/">Perl Mongers</a></p>
+		<p><a href="http://www.google.com/calendar/embed?src=ngctmrd1cac35061mrjt3hpgng%40group.calendar.google.com"><img src="/img/calendar.gif" width="20" height="20" alt=""></a> <a href="http://www.google.com/calendar/embed?src=ngctmrd1cac35061mrjt3hpgng%40group.calendar.google.com">Календарь Perl-событий</a></p>
+		<p><br><a href="http://www.oreilly.com/"><img alt="" src="/img/ug_ad_25.gif" width="250" height="60"></a></p>
+		<br>
+
+		<ul>
+		<li><img alt="" src="/img/elephant.gif" width="250" height="58"></li>
+		<li><a href="http://vladivostok.pm.org/">Владивосток.PM</a></li>
+		<li><a href="http://kazan.pm.org/">Казань.PM</a></li>
+        <li><a href="http://kiev.pm.org">Киев.PM</a></li>
+        <li><a href="http://kostroma.pm.org">Кострома</a></li>
+        <li><a href="http://krasnodar.pm.org">Краснодар.PM</a></li>
+		<li><a href="http://minsk.pm.org">Минск.PM</a></li>
+		<li><a href="http://moscow.pm.org"><strong>Москва.PM</strong></a> <img src="/img/star.gif" width="15" height="15" alt=""></li>
+		<li><a href="http://odessa.pm.org">Одесса.PM</a></li>
+		<li><a href="http://rostovondon.pm.org/">Ростов-на-Дону.PM</a></li>
+		<li><a href="http://spb.pm.org/">Санкт-Петербург.PM</a></li>
+		</ul>
+	</div>
+	</td></tr>
+	</table>
+	</td></tr>
+	
+	<tr valign="bottom"><td class="bottom"><div class="info">
+		<div class="right">{{&settings.twist.footer}}</div>
+	<div class="left">{{settings.twist.description}}</div>
+	</div>
+</td></tr>
+</table>
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter10646620 = new Ya.Metrika({id:10646620, enableAll: true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/10646620" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

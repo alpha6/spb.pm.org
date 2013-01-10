@@ -1,0 +1,17 @@
+    <div class="text">
+        <h2 class="title">
+            <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
+        </h2>
+        {{>article-meta}}
+        <div class="article-content">
+            {{#preview}}
+                {{&preview}}
+                <div class="more">&rarr; <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#cut">{{preview_link}}</a></div>
+            {{/preview}}
+            {{^preview}}
+                {{&content}}
+            {{/preview}}
+            <div class="comment-counter pull-right"><a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#disqus_thread">{{title}}</a></div>
+            <div style="clear:both"></div>
+        </div>
+    </div>

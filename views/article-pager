@@ -1,0 +1,14 @@
+{{#pager}}
+<div id="pager">
+    <span class="active">
+    {{#prev}}
+        <span class="arrow">&larr; </span><a
+        href="/articles/{{prev.created.year}}/{{prev.created.month}}/{{prev.name}}.html">{{prev.title}}</a> &nbsp;
+    {{/prev}}
+|
+    {{#next}}
+        &nbsp;<a href="/articles/{{next.created.year}}/{{next.created.month}}/{{next.name}}.html">{{next.title}}</a><span class="arrow"> &rarr;</span>
+    {{/next}}
+    </span>
+</div>
+{{/pager}}

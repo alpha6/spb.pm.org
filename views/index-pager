@@ -1,0 +1,17 @@
+{{#pager}}
+    <div id="pager">
+        {{#prev}}
+        <a href="/?timestamp={{prev}}"><span class="arrow">&larr; </span>Later</a>
+        {{/prev}}
+        {{^prev}}
+        <span class="arrow">&larr; </span>Later
+        {{/prev}}
+
+        {{#next}}
+        <a href="/?timestamp={{next}}">Earlier<span class="arrow"> &rarr;</span></a>
+        {{/next}}
+        {{^next}}
+        Earlier<span class="arrow"> &rarr;</span>
+        {{/next}}
+    </div>
+{{/pager}}

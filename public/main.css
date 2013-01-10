@@ -49,6 +49,13 @@ td.content
 {
 	padding: 0 20pt 3em 2em;
 }
+td.content nav {
+	margin: 1em 0 1em 0;
+	font-size: 110%;
+	font-weight: normal;
+	padding-bottom: 0.1em;
+	border-bottom: 1px solid #D7D7D7;	
+}
 span.ooo
 {
 	padding-left: 2pt;

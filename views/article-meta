@@ -1,0 +1,8 @@
+    <div class="article-meta">
+        {{created}} by {{author}}
+        <div class="tags">
+        {{#tags}}
+{{^_first}}, {{/_first}}<a href="/tags/{{#uri_escape}}{{.}}{{/uri_escape}}.html">{{.}}</a>
+        {{/tags}}
+        </div>
+    </div>
