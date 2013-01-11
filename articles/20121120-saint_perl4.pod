@@ -1,5 +1,5 @@
 Title: Saint Perl 4
-Tags: news
+Tags: announcement
         
 22 декабря в L<офисе|http://company.yandex.ru/contacts/spb/> компании Яндекс в Санкт-Петербурге состоится конференция для любителей и пользователей языка Perl — «Saint Perl 4». 
 
