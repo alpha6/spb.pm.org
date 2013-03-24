@@ -1,5 +1,5 @@
 =head1 SPb.pm.org
 
-Saint-Petersburg Perl monger.
+Saint-Petersburg Perl mongers.
 
-Join the Pel side.
+Join the Perl side.
