@@ -1,0 +1,30 @@
+Title: SaintPerl 5
+Tags: record, SaintPerl
+
+21 декабря 2013 года прошел очередной, пятый, воркшоп SaintPerl.
+
+Воркшоп прошел в офисе компании L<JetBrains|http://jetbrains.ru> при спонсорской поддержке компании L<Reg.ru|http://reg.ru> 
+и собрал 14 докладчиков и около 50 слушателей.
+
+Perl-хакеры России, Украины и Нидерландов делились своими знаниями с аудиторией:
+
+=for HTML <img src="https://pbs.twimg.com/media/Bb_fy5UIcAAmRu5.jpg" width="300px">
+
+и в кулуарах кофейного автомата:
+
+=for HTML <p><img src="https://pbs.twimg.com/media/BcAg8hmIcAAV0Pq.jpg" width="300px"></p>
+
+
+Так же на встрече была впервые анонсирована конференция L<YAPC::Russia 2014|http://event.yapcrussia.org/yr2014/>. 
+Которая, в этом году, пройдет 14 июня в Киеве. 
+
+Приятным моментом воркшопа стала экскурсия на крышу офисного здания JetBrains, откуда открываются чудесные виды на Васильевский Остров.
+
+=for HTML <img src="https://pbs.twimg.com/media/BcCN7_MCQAAhDL9.jpg" width="300px">
+
+
+Закончилась конференция отличным афтэпати, организованным компанией L<Reg.ru|http://reg.ru> в пабе Wild Duck.
+
+=for HTML <img src="https://pbs.twimg.com/media/BcB5uyIIgAAuKXd.jpg" width="300px">
+
+Слайды и видеозаписи воркшопа будут выложены чуть позже, следите за анонсами.
